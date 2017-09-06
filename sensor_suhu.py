@@ -1,6 +1,18 @@
 #! /usr/bin/env python3
 
-'''untuk mendapatkan data suhu dari sensor suhu'''
+'''untuk mendapatkan data suhu dari sensor suhu
+Sensor
+digital signal 	= 	GPIO 24 	[Pin 18 (RPi)]
++V		= 	3,3V 	[Pin 1 (RPi)]
+GND		= 	GND 	[Pin 06 (RPi)]
+analog signal 	= 	Analog 0 	[Pin A0 (ADS1115 - KY-053)]
+
+ADS1115 - KY-053:
+VDD 		= 	3,3V 	[Pin 01]
+GND 		= 	GND 	[Pin 09]
+SCL 		= 	GPIO03 / SCL 	[Pin 05]
+SDA 		= 	GPIO02 / SDA 	[Pin 03]
+A0 		= 	look above 	[Sensor: analog signal]'''
 
 #############################################################################################################
 ### Copyright by Joy-IT
