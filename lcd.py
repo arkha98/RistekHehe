@@ -18,5 +18,7 @@ def cetakNamaMakanan():
 
 def cetakGizi():
 	for (i in gizi):
-		print
+		print(i)
 	return 0
+def initLCD():
+	print("Selamat Datang")
