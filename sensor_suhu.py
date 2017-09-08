@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
 
 '''untuk mendapatkan data suhu dari sensor suhu
 Sensor
@@ -86,17 +86,21 @@ try:
         while True:
                 #Current values will be recorded
                 analog = adc.readADCSingleEnded(adc_channel_0, gain, sps)
+                
+                def hitungSuhu (rawADC):
+					temp = log(10000.0 * ((1024.0 / RawADC ‐ 1)))
+					temp = 1 / (0.001129148 + (0.000234125 + ( 0.0000000876741 * temp * temp)) * Temp)
+					temp = temp ‐ 273.15
+					return temp
   
                 # Output at the terminal
                 if GPIO.input(Digital_PIN) == False:
-                        print "Analog voltage value:", analog,"mV, ","extreme value: not reached"
+                        print "Analog voltage value:", hitungSuhu(analog),"mV, ","extreme value: not reached"
                 else:
-                        print "Analog voltage value:", analog, "mV, ", "extreme value: reached"
+                        print "Analog voltage value:", hitungSuhu(analog), "mV, ", "extreme value: reached"
                 print "---------------------------------------"
   
                 sleep(delayTime)
-  
-  
   
 except KeyboardInterrupt:
         GPIO.cleanup()
